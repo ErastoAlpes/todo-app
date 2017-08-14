@@ -39,9 +39,11 @@ export default (state = INITIAL_STATE, action) => {
           case 'DESCRIPTION_CHANGED':
               return { ...state, description: action.payload }
           case 'TODO_SEARCHED':
-              return { ...state, list: action.payload.data }
+              return { ...state, list: action.payload }//desnecessario o 'payLoad.data', pois o '.data'(que é a lista dos dados) ja vem carregado do 'search' no 'todoReducer'
           case 'TODO_ADDED':
               return { ...state, description: ''}
+        case 'TODO_CLEAR':  
+            return {... state, description: ''}
           default:
               return state
   }
